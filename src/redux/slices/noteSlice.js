@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
+import notes from "../../notes"
 
 export const noteSlice = createSlice({
     name: "note",
     initialState:{
-        value: 0
+        note: notes,
     },
     reducers:{
         
