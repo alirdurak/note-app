@@ -19,7 +19,7 @@ function ColorPicker() {
         }}/>}  />
         <FormControlLabel className='border-blue-800 rounded-full'  value="blue" control={<Radio sx={{color:blue[800],
         '&.Mui-checked': {
-            color: blue [600],
+            color: blue[600],
           },
         }} />}  />
         <FormControlLabel className='border-green-800 rounded-full' value="green" control={<Radio sx={{
