@@ -1,14 +1,18 @@
 import React from 'react'
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import { useDispatch } from 'react-redux';
+import { addNewNote } from '../redux/slices/noteSlice';
 
 function Buttons() {
+  const dispatch =useDispatch()
+  const newNote = () => {
+    dispatch(addNewNote())
+    console.log("click")
+  }
   return (
     <div>
-    <ButtonGroup variant="outlined" aria-label="outlined primary button group">
-        <Button className='bg-red'>Save</Button>
-        <Button>Delete</Button>
-    </ButtonGroup>
+   
+        <button onClick={newNote}>save</button>
+    
     </div>
   )
 }

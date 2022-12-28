@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import TextField from '@mui/material/TextField';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { searchMethod } from '../redux/slices/noteSlice';
 function Search() {
   const [search, setSearch] = useState("")
@@ -8,13 +8,7 @@ function Search() {
     const dispatch = useDispatch();
     const handleSearch = (e)=> {
       setSearch(e.target.value)
-     
       dispatch(searchMethod(search))    
-     
-      
-
-      
-      
     }
 
   return (
