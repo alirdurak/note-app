@@ -1,13 +1,14 @@
 import {createSlice,nanoid} from '@reduxjs/toolkit'
-import notesArray from "../../notes"
 
+
+const notesArray = JSON.parse(localStorage.getItem("notes"))
 export const noteSlice = createSlice({
     name: "note",
     initialState:{
         notes: notesArray,
         color: "",
         header: "",
-        text: "",
+        text: "",   
         
 
     },
@@ -29,15 +30,16 @@ export const noteSlice = createSlice({
           },
           colorChangeMethod: (state, action) => {
             state.color = action.payload
-            console.log(state.color)
+            
           },
-          addNewNote: (state) => {
-          state.notes.push({
-            header: state.header,
+          addNewNote: (state) => { 
+         let a = []
+         a=(JSON.parse(localStorage.getItem("notes"))) || []
+         a.push( {header: state.header,
             note: state.text,
             color: state.color,
-            id: nanoid(),   
-          })
+            id: nanoid(),   })
+            localStorage.setItem("notes", JSON.stringify(a))
           }            
 
 

@@ -12,8 +12,8 @@ function TextArea() {
   const [textChanger, setTextChanger] = useState("")
   const dispatch = useDispatch()
 
-    const headerValue = (e)=>{
-      setHeaderChanger(e.target.value)
+    const headerValue = async (e)=>{
+      await setHeaderChanger(e.target.value)
       dispatch(headerChangeMethod(headerChanger))
     }
     const textValue = (e)=>{
