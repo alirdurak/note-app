@@ -8,9 +8,11 @@ function ColorPicker() {
   const [color, setColor] = useState("");
   const dispatch = useDispatch();
 
-  const colorValue = async(e) =>{
-    await setColor(e.target.value);
+  const colorValue = (e) =>{
+     setColor(e.target.value);
+     console.log(color)
     dispatch(colorChangeMethod(color));
+
   }
 
   return (
@@ -18,10 +20,11 @@ function ColorPicker() {
         <FormControl>
       
       <RadioGroup 
-        onClick={colorValue}
         className='p-0 '         
         row
         name="colorControl"
+        value={color}
+        onChange={colorValue}
       >
         <FormControlLabel  className='' value="red" control={<Radio name="colorControl" value="red"    sx={{color:red[800], 
         '&.Mui-checked': {

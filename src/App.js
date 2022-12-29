@@ -17,7 +17,7 @@ function App() {
       }}>
       <Search/>
       <TextArea/>
-      <List/>
+      <List  />
       </Box>
     </div>
   );

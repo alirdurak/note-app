@@ -1,7 +1,7 @@
 import {createSlice,nanoid} from '@reduxjs/toolkit'
 
 
-const notesArray = JSON.parse(localStorage.getItem("notes"))
+const notesArray = (JSON.parse(localStorage.getItem("notes"))) || []
 export const noteSlice = createSlice({
     name: "note",
     initialState:{
@@ -9,8 +9,6 @@ export const noteSlice = createSlice({
         color: "",
         header: "",
         text: "",   
-        
-
     },
     reducers:{
         searchMethod: (state,action) => {
@@ -40,11 +38,19 @@ export const noteSlice = createSlice({
             color: state.color,
             id: nanoid(),   })
             localStorage.setItem("notes", JSON.stringify(a))
-          }            
+          },
+          deleteMethod: (state,action) => {
+            let b = []
+            b = state.notes 
+            const filtered = b.filter((i) => {
+             return i.id !== action.payload
+            })
+            localStorage.setItem("notes",JSON.stringify(filtered))
+          },            
 
 
         
     },
 });
-export const {searchMethod,headerChangeMethod,textChangeMethod,colorChangeMethod,addNewNote} = noteSlice.actions;
+export const {searchMethod,headerChangeMethod,textChangeMethod,colorChangeMethod,addNewNote,deleteMethod} = noteSlice.actions;
 export default noteSlice.reducer;
