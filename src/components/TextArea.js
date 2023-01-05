@@ -13,7 +13,7 @@ function TextArea() {
   const dispatch = useDispatch()
   useEffect(()=>{dispatch(headerChangeMethod(headerChanger))},
   [headerChanger])
-  
+
   useEffect(()=>{ dispatch(textChangeMethod(textChanger))},
   [textChanger])
 
@@ -39,13 +39,13 @@ function TextArea() {
       <Box 
       className="flex justify-between content-end p-0 container "
       >
-      <TextField  required  onChange={headerValue}  label="Header" className='w-40 '  />
+      <TextField  required  value={headerChanger} onChange={headerValue}  label="Header" className='w-40 '  />
       <ColorPicker  />
       </Box>
-     <TextField onChange={textValue}  variant="outlined" multiline minRows={8} placeholder="Write your note..." fullWidth   >
+     <TextField value={textChanger} onChange={textValue}  variant="outlined" multiline minRows={8} placeholder="Write your note..." fullWidth   >
      </TextField>
      <Box className="justify-self-start flex self-end mt-2"  >
-     <Buttons  />
+     <Buttons setHeaderChanger={setHeaderChanger} setTextChanger={setTextChanger}  />
      </Box>
      
      
