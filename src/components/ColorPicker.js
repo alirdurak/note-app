@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { FormControl, RadioGroup, Radio, FormControlLabel} from '@mui/material';
 import { red,blue,green,yellow,pink } from '@mui/material/colors';
 import { useDispatch } from 'react-redux';
@@ -8,11 +8,14 @@ function ColorPicker() {
   const [color, setColor] = useState("");
   const dispatch = useDispatch();
 
+  useEffect(()=>{
+    dispatch(colorChangeMethod(color))
+  },
+  [color])
+
   const colorValue = (e) =>{
      setColor(e.target.value);
      console.log(color)
-    dispatch(colorChangeMethod(color));
-
   }
 
   return (

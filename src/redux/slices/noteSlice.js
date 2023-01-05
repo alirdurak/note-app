@@ -1,7 +1,7 @@
 import {createSlice,nanoid} from '@reduxjs/toolkit'
 
 
-const notesArray = (JSON.parse(localStorage.getItem("notes"))) || []
+let notesArray = JSON.parse(localStorage.getItem("notes"))
 export const noteSlice = createSlice({
     name: "note",
     initialState:{
@@ -38,6 +38,7 @@ export const noteSlice = createSlice({
             color: state.color,
             id: nanoid(),   })
             localStorage.setItem("notes", JSON.stringify(a))
+            state.notes = a
           },
           deleteMethod: (state,action) => {
             let b = []
@@ -46,6 +47,7 @@ export const noteSlice = createSlice({
              return i.id !== action.payload
             })
             localStorage.setItem("notes",JSON.stringify(filtered))
+            state.notes = filtered
           },            
 
 

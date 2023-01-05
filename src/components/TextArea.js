@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import ColorPicker from './ColorPicker';
@@ -11,14 +11,19 @@ function TextArea() {
   const [headerChanger, setHeaderChanger] = useState("")
   const [textChanger, setTextChanger] = useState("")
   const dispatch = useDispatch()
+  useEffect(()=>{dispatch(headerChangeMethod(headerChanger))},
+  [headerChanger])
+  
+  useEffect(()=>{ dispatch(textChangeMethod(textChanger))},
+  [textChanger])
 
-    const headerValue = async (e)=>{
-      await setHeaderChanger(e.target.value)
-      dispatch(headerChangeMethod(headerChanger))
+    const headerValue =  (e)=>{
+       setHeaderChanger(e.target.value)
+      
     }
     const textValue = (e)=>{
       setTextChanger(e.target.value)
-      dispatch(textChangeMethod(textChanger))
+     
     }
   return (
     <div>

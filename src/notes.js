@@ -1,7 +1,7 @@
 // import { nanoid } from "@reduxjs/toolkit";
 
 
-
+// export  const set = () => 
 //  localStorage.setItem("notes",JSON.stringify([
 //     {
 //         id: nanoid(),
@@ -13,25 +13,25 @@
 //         id: nanoid(),
 //         header: "header2",
 //         note: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quae ex recusandae corrupti, eum rerum! Dicta minima at odio dolorum aperiam beatae itaque quae fugit. Eaque dignissimos voluptatibus reprehenderit illo.",
-//         color: "red",
+//         color: "blue",
 //     },
 //     {
 //         id: nanoid(),
 //         header: "header3",
 //         note: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quae ex recusandae corrupti, eum rerum! Dicta minima at odio dolorum aperiam beatae itaque quae fugit. Eaque dignissimos voluptatibus reprehenderit illo.",
-//         color: "red",
+//         color: "yellow",
 //     },
 //     { 
 //         id: nanoid(),   
 //         header: "header4",
 //         note: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quae ex recusandae corrupti, eum rerum! Dicta minima at odio dolorum aperiam beatae itaque quae fugit. Eaque dignissimos voluptatibus reprehenderit illo.",
-//         color: "red",
+//         color: "pink",
 //     },
 //     {
 //         id: nanoid(),
 //         header: "header5",
 //         note: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quae ex recusandae corrupti, eum rerum! Dicta minima at odio dolorum aperiam beatae itaque quae fugit. Eaque dignissimos voluptatibus reprehenderit illo.",
-//         color: "red",
+//         color: "green",
 //     },
 //     {
 //         id: nanoid(),
