@@ -8,7 +8,7 @@ function Buttons({setTextchanger, setHeaderChanger}) {
     e.preventDefault()
     dispatch(addNewNote())
    
-  }
+  } 
   return (
     <div>
       <form  onSubmit={newNote}>
